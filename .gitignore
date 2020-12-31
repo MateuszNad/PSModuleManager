@@ -7,7 +7,7 @@
 # Exclude packaged modules
 *.zip
 
-.tests/*
+.tests
 PSModuleManager.Build.ps1
 
 
