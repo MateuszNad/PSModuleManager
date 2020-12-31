@@ -1,4 +1,4 @@
-
+﻿
 <#
 .Synopsis
      The function to return installed modules
