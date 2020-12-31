@@ -22,6 +22,13 @@
     Az.ApplicationInsights         1.1.0                2          CurrentUser          1,58
 
 .EXAMPLE
+    (Get-PSInstalledModule | Measure-Object -Property SpaceUsedMb -Sum) | Select Property, Sum
+
+    Property       Sum
+    --------       ---
+    SpaceUsedMb 780,48
+
+.EXAMPLE
     PS C:\> Get-PSInstalledModule PSHTML -Scope AllUsers | Select *
 
     Name          : PSHTML
