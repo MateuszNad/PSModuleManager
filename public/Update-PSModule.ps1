@@ -37,6 +37,7 @@
     Notes:
     Changelog:
 #>
+#Requires -RunAsAdministrator
 function Update-PSModule
 {
     [cmdletbinding(SupportsShouldProcess = $true)]

@@ -31,6 +31,7 @@
     Notes:
     Changelog:
 #>
+#Requires -RunAsAdministrator
 function Uninstall-PSOlderModule
 {
     [cmdletbinding(SupportsShouldProcess = $true)]
