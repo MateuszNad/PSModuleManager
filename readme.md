@@ -1,10 +1,19 @@
+<p align="left">
+  <img src="https://github.com/MateuszNad/PSModuleManager/workflows/Publish%20PowerShell%20module/badge.svg"/>
+  <a href="https://www.powershellgallery.com/packages/PSModuleManager"><img src="https://img.shields.io/powershellgallery/v/PSModuleManager.svg"></a>
+  <a href="https://www.powershellgallery.com/packages/PSModuleManager"><img src="https://img.shields.io/powershellgallery/p/PSModuleManager.svg"></a>
+  <a href="https://akademiapowershell.pl"><img src="https://img.shields.io/badge/Blog-AkademiaPowerShell-2A6496.svg"></a>
+  <a href="https://www.linkedin.com/in/mnadobnik/"><img src="https://img.shields.io/badge/LinkedIn-mnadobnik-0077B5.svg?logo=LinkedIn"></a>
+<a href="https://twitter.com/MateuszNadobnik"><img src="https://img.shields.io/twitter/follow/MateuszNadobnik.svg?label=Twitter%20%40MateuszNadobnik&style=social"></a>
+</p>
+
 # PSModuleManager - PowerShell Module
 
-PSModuleManager it's the module for managing PowerShell modules on your machine. The module is based on native cmdlets like Get-Module, Update-Module, and Uninstall-Module.
+PSModuleManager it's the module for **managing PowerShell modules on your machine**. The module is based on native cmdlets like Get-Module, Update-Module, and Uninstall-Module.
 
 PSModuleManager provides 3 functions that help you get a list of modules depends on a scope (CurrentUser or AllUsers), removing older versions, and updating to the latest versions in a fast way.
 
-> The module requires administrator permission
+>⚠️ The module requires administrator permission
 
 ## Get-PSInstalledModule
 
@@ -37,6 +46,8 @@ Get-PSInstalledModule
 # the command for AllUsers scope
 Get-PSInstalledModule -Scope AllUsers
 ```
+
+![Get-PSInstalledModule](https://akademiapowershell.pl/wp-content/uploads/2021/01/image.png)
 
 You can get information about one a module.
 
@@ -77,6 +88,8 @@ The command wraps Update-Module cmdlet. Update-PSModule needs a ModuleManagerLis
 # updating all modules for CurrentUser scope
 Get-PSInstalledModule | Update-PSModule -Force
 ```
+
+![Update-PSModule](https://akademiapowershell.pl/wp-content/uploads/2021/01/image-1.png)
 
 ### Examples
 

@@ -5,6 +5,9 @@ name: Publish PowerShell module
 on:
   push:
     branches: [master]
+    paths-ignore:
+      - "docs/**"
+      - "readme.md"
 
 # Definiujemy jeden lub więcej zadań
 jobs:
