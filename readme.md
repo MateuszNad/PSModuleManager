@@ -144,11 +144,11 @@ Get-PSInstalledModule -Name dbatools -Scope AllUsers | Uninstall-PSOlderModule -
 ## Install from PSGallery
 
 ```powershell
-Install-Module -Name PSParseHTML -AllowClobber -Force
+Install-Module -Name PSModuleManager -Force
 ```
 
 ## Update from PSGallery
 
 ```powershell
-Update-Module -Name PSParseHTML
+Update-Module -Name PSModuleManager
 ```
