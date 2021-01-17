@@ -41,6 +41,7 @@ jobs:
         env:
           VALIDATE_JSON: false
           VALIDATE_ALL_CODEBASE: true
+          VALIDATE_MARKDOWN: false
           DEFAULT_BRANCH: master
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
