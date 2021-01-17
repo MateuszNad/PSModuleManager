@@ -96,7 +96,7 @@ function Get-PSInstalledModule
         [Parameter(ValueFromPipeline, Position = 0)]
         [string[]]$Name,
         [Parameter(Position = 1)]
-        [ValidateSet('CurrentUser', 'AllUsers')]
+        [ValidateSet('CurrentUser', 'AllUsers', 'System', 'CustomPath')]
         # [ValidateSet('CurrentUser', 'AllUsers', 'PowerShell', 'CustomPath', 'System')]
         [string[]]$Scope = 'CurrentUser'
     )
@@ -133,10 +133,12 @@ function Get-PSInstalledModule
                         Count         = ($GroupModule | Measure-Object -Property Name).Count
                         Modules       = [array]($GroupModule | Where-Object Scope -EQ $Scope | Select-Object $Properties)
                         Scope         = [string]$Scope
+                        ModulePath    = $GroupModule[0].PSModulePath
                         #SpaceUsed = ($GroupModule | Measure-Object -Property SpaceUsed -Sum).Sum
                         SpaceUsedMb   = $SpaceUsedMb #[Math]::Round($SpaceUsedMb, 2)
                         Description   = $GroupModule[0].Description
                         Author        = $GroupModule[0].Author
+
                         CompanyName   = $GroupModule[0].CompanyName
                     }
                     Write-Output $Object

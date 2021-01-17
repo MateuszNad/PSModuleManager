@@ -11,9 +11,12 @@
 
 PSModuleManager it's the module for **managing PowerShell modules on your machine**. The module is based on native cmdlets like Get-Module, Update-Module, and Uninstall-Module.
 
-PSModuleManager provides 3 functions that help you get a list of modules depends on a scope (CurrentUser or AllUsers), removing older versions, and updating to the latest versions in a fast way.
+PSModuleManager provides 3 functions that help you get a list of modules depends on a scope (CurrentUser, AllUsers or System), removing older versions, and updating to the latest versions in a fast way.
+
+I recommend [PowerShell Modules in a Cross-Version World](https://jdhitsolutions.com/blog/powershell/8027/powershell-modules-in-a-cross-version-world/) post, which a good explains the location for modules in Windows PowerShell and Powershell 7.
 
 >⚠️ The module requires administrator permission
+
 
 ## Get-PSInstalledModule
 
@@ -45,6 +48,9 @@ Get-PSInstalledModule
 
 # the command for AllUsers scope
 Get-PSInstalledModule -Scope AllUsers
+
+# the command for System scope
+Get-PSInstalledModule -Scope System
 ```
 
 ![Get-PSInstalledModule](https://akademiapowershell.pl/wp-content/uploads/2021/01/image.png)

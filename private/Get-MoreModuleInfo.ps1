@@ -23,10 +23,10 @@ function Get-MoreModuleInfo
             {
                 'CurrentUser', $script:MyDocumentsModulesPath
             }
-            elseif ($InputObject.ModuleBase -like "$script:PowerShellModulesPath*")
-            {
-                'PowerShell', $script:PowerShellModulesPath
-            }
+            # elseif ($InputObject.ModuleBase -like "$script:PowerShellModulesPath*")
+            # {
+            #     'PowerShell', $script:PowerShellModulesPath
+            # }
             elseif ($InputObject.ModuleBase -like "$script:SystemModulesPath*")
             {
                 'System', $script:SystemModulesPath
