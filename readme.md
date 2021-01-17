@@ -17,14 +17,13 @@ I recommend [PowerShell Modules in a Cross-Version World](https://jdhitsolutions
 
 >⚠️ The module requires administrator permission
 
-
 ## Get-PSInstalledModule
 
 The function returns information about available modules on your machine (similar to Get-Module and Get-InstalledModule). Default it will be modules from CurrentScope scope (and consistent with running PowerShell version).
 
 A whole object that it's returned:
 
-```ps
+```powershell
 Get-PSInstalledModule -Name dbatools  | Select-Object *
 
 # Name          : Az
@@ -42,7 +41,7 @@ Get-PSInstalledModule -Name dbatools  | Select-Object *
 
 You can get information about all modules on your machine (example for Windows PowerShell if the command will be running there)
 
-```ps
+```powershell
 # default CurrentUser scope
 Get-PSInstalledModule
 
@@ -57,7 +56,7 @@ Get-PSInstalledModule -Scope System
 
 You can get information about one a module.
 
-```ps
+```powershell
 Get-PSInstalledModule -Name dbatools
 
 # a parameter -Name supports wildcards
@@ -66,7 +65,7 @@ Get-PSInstalledModule -Name dba*
 
 You can get information about how many space use for installed modules
 
-```ps
+```powershell
 # CurrentUser scope
 Get-PSInstalledModule | Measure-Object -Property SpaceUsedMb -Sum
 
@@ -76,7 +75,7 @@ Get-PSInstalledModule -Scope AllUsers | Measure-Object -Property SpaceUsedMb -Su
 
 Other examples
 
-```ps
+```powershell
 Get-PSInstalledModule | Sort-Object -Property SpaceusedMb -Descending | Select -First 5
 
 Get-PSInstalledModule -Scope AllUsers | Sort-Object -Property SpaceusedMb -Descending | Select -First 5
@@ -90,7 +89,7 @@ Get-PSInstalledModule -Scope AllUsers | Sort-Object -Property Count -Descending 
 
 The command wraps Update-Module cmdlet. Update-PSModule needs a ModuleManagerList object from Get-PSIntalledModule.
 
-```ps
+```powershell
 # updating all modules for CurrentUser scope
 Get-PSInstalledModule | Update-PSModule -Force
 ```
@@ -99,7 +98,7 @@ Get-PSInstalledModule | Update-PSModule -Force
 
 ### Examples
 
-```ps
+```powershell
 # the command supports -WhatIf switch
 Get-PSInstalledModule -Name dbatools -Scope AllUsers | Update-PSModule -WhatIf
 
@@ -117,14 +116,14 @@ Get-PSInstalledModule -Name az* | Update-PSModule -Force
 
 The command wraps the Uninstall-Module cmdlet. UninstalPSOlderModule needs an object ModuleManagerList from Get-PSIntalledModule and uninstalls all older versions.
 
-```ps
+```powershell
 # removing old versions for modules in the scope of CurrentUser
 Get-PSInstalledModule | Uninstall-PSOlderModule
 ```
 
 ### Examples
 
-```ps
+```powershell
 # you can use -WhatIf switch
 Get-PSInstalledModule -Scope AllUsers | Uninstall-PSOlderModule -Verbose -WhatIf
 
@@ -144,12 +143,12 @@ Get-PSInstalledModule -Name dbatools -Scope AllUsers | Uninstall-PSOlderModule -
 
 ## Install from PSGallery
 
-```ps
+```powershell
 Install-Module -Name PSParseHTML -AllowClobber -Force
 ```
 
 ## Update from PSGallery
 
-```ps
+```powershell
 Update-Module -Name PSParseHTML
 ```
