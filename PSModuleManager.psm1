@@ -14,6 +14,8 @@
 #     . $_.FullName
 # }
 
+#Requires -RunAsAdministrator
+
 # script:variable
 $script:PSModuleRoot = $PSScriptRoot
 $script:FormatXml = Join-Path -Path $script:PSModuleRoot -ChildPath 'PSModuleManager.Format.ps1xml'
